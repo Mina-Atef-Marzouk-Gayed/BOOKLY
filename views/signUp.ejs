@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/Login.css"> <!--WWWWWWAAAAAAARRRRRRNNNNNNIIIIIINNNNNNGGGGGGG-->
+    <link rel="stylesheet" href="../css/nav.css">   <!--WWWWWWAAAAAAARRRRRRNNNNNNIIIIIINNNNNNGGGGGGG-->
+    <link rel="icon" href="../Icon.jpeg">
+
+    <!--This is for icon -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>sign up</title>
+</head>
+<body>
+<%-include('../views/partials/nav.ejs'); -%>
+    
+    <div class="wrapper">
+        <!---->
+        <form action="/signUp" method="post" id="form" class="form">
+        <div class="top">
+            <span>Have an account? <a href="signIn">Sign In</a></span>
+            <header>Sign Up</header>
+        </div>
+            <div class="two-forms">
+                <div class="input-box">
+                    <input type="text" class="input-field" name="first" id="FN" placeholder="FirstName">
+                    <i class="bx bx-user"></i>
+                    <div class="FirstName error"></div>
+                </div>
+                <div class="input-box">
+                    <input type="text" class="input-field" name="last" id="LN" placeholder="LastName">
+                    <i class="bx bx-user"></i>
+                    <div class="LastName error"></div>
+
+                </div>
+        </div>            <div class="input-box">
+                <input type="text" id="email" name="email"  class="input-field" placeholder="UserName or Email" >
+                <i class='bx bx-envelope'></i>                
+                <div class="email error"></div>
+
+            </div>
+            <div class="input-box">
+                <input type="password" id="password" name="password" class="input-field" placeholder="Password" >
+                <i class="bx bx-lock-alt"></i>
+                <div class="password error"></div>
+
+            </div>
+            
+            <div class="input-box">
+                <input type="password" id="ConfirmPassword" name="Cpassword" class="input-field" placeholder="Confirm Password" >
+                <i class="bx bx-lock-alt"></i>
+                <div class="Cpassword error"></div>
+
+            </div>
+            
+            <div class="input-box">
+                <input type="submit" class="submit" value="submit">
+            </div>          
+            <div class="two-chx">
+                <!--
+                <div class="one">
+                    <input type="checkbox" id="L-Check">
+                    <label for="login-check">Remember Me</label>
+                </div>
+                -->
+                <div class="two">
+                    <input type="checkbox" id="termsCheckbox" unchecked>
+                    <label><a target="_blank" href="Terms">I agreed to the terms and conditions.</a></label>
+                </div>
+            </div>
+        </form>
+    </div>
+    <%-include('../views/partials/footer.ejs'); -%>
+
+    <script>
+        
+        const form = document.querySelector('form');
+        const FirstNameError = document.querySelector('.FirstName.error');
+        const LastNameError = document.querySelector('.LastName.error');
+        const emailError = document.querySelector('.email.error');
+        const passwordError = document.querySelector('.password.error');
+        const CpasswordError = document.querySelector('.Cpassword.error');
+
+        form.addEventListener('submit',async  (e) => {
+            e.preventDefault();
+        
+            //terms and constion 
+            if (!termsCheckbox.checked) {
+            alert('Please accept the terms and conditions before submitting the form.');
+            return
+        }
+            //reset errors
+        FirstNameError.textContent ='';
+        LastNameError.textContent = '';
+        emailError.textContent='';
+        passwordError.textContent='';
+        CpasswordError.textContent='';
+
+         // get values
+            const first=form.first.value;
+            const last=form.last.value;
+            const email = form.email.value;
+            const password = form.password.value;
+            const Cpassword = form.Cpassword.value;
+        if(password!=Cpassword){
+            CpasswordError.textContent='Password does not match';
+            return
+        }    
+            //console.log(first,last,email, password,Cpassword);
+
+            try {
+        const res = await fetch('/signUp', { 
+        method: 'POST', 
+        body: JSON.stringify({first,last,email, password,Cpassword}),
+        headers: {'Content-Type': 'application/json'}
+        });
+        const data=await res.json();
+        console.log(data);
+        if (data.errors) {
+        FirstNameError.textContent = data.errors.first;
+        LastNameError.textContent = data.errors.last;
+        emailError.textContent=data.errors.email;
+        passwordError.textContent=data.errors.password;
+        CpasswordError.textContent=data.errors.Cpassword;
+        return; // Stop form submission
+
+        }
+//relocartionnnnnnnnnnnnnn
+        if(data.user){
+            location.assign('/');
+        }
+    }
+    catch (err) {
+        console.log(err);
+    }
+        });
+        </script>
+<!--
+<script src="../public/js/VSU.js"></script>
+
+<script src="../js/VSU.js"></script>
+-->
+</body>
+</html>
+

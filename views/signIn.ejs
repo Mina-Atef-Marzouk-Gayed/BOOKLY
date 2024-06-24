@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/css/nav.css"> <!--WWWWWWAAAAAAARRRRRRNNNNNNIIIIIINNNNNNGGGGGGG-->
+    <link rel="stylesheet" href="../public/css/Login.css">   <!--WWWWWWAAAAAAARRRRRRNNNNNNIIIIIINNNNNNGGGGGGG-->
+    <link rel="stylesheet" href="../css/Login.css"> <!--WWWWWWAAAAAAARRRRRRNNNNNNIIIIIINNNNNNGGGGGGG-->
+    <link rel="stylesheet" href="../css/nav.css">   <!--WWWWWWAAAAAAARRRRRRNNNNNNIIIIIINNNNNNGGGGGGG-->
+    <link rel="icon" href="../Icon.jpeg">
+    <!--This is for icon -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>sign up</title>
+</head>
+<body>
+    <%-include('../views/partials/nav.ejs'); -%>
+    <!--  onsubmit="validate()"-->
+    <div class="wrapper">
+        <form action="/signIn" method="post" id="form" class="form-box">
+    <div class="Login" id="Login">
+        <div class="top">
+        <span>Don't have an account? <a href="/signUp">Sign Up</a></span>
+            <header>Sign In</header>
+        </div>
+
+            <div class="input-box">
+                <input type="text" id="email" name="email" class="input-field" placeholder="UserName or Email" >
+                <i class='bx bx-envelope'></i>                
+                <div class="email error"></div>
+            </div>
+            <div class="input-box">
+                <input type="password" id="password" name="password" class="input-field" placeholder="Password" >
+                <i class="bx bx-lock-alt"></i>
+                <div class="password error"></div>
+
+            </div>
+            <div class="input-box">
+                <input type="submit" class="submit" value="Submit">
+            </div> 
+            <div class="two-chx">
+                <!--
+                <div class="one">
+                    <input type="checkbox" id="L-Check">
+                    <label for="login-check">Remember Me</label>
+                </div>
+                -->
+                <div class="two">
+                    
+                    <label><a href="#">forget password.</a></label>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+<%-include('../views/partials/footer.ejs'); -%>
+
+
+<script>
+    const form = document.querySelector('form');
+    const emailError = document.querySelector('.email.error');
+    const passwordError = document.querySelector('.password.error');
+    
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+    
+      // reset errors
+        emailError.textContent = '';
+        passwordError.textContent = '';
+    
+      // get values
+        const email =form.email.value; 
+        const password = form.password.value;
+
+        console.log(`Email: ${email}, Password: ${password}`); // Add this log statement
+
+    
+        try {
+        const res = await fetch('/signIn', { 
+            method: 'POST', 
+            body: JSON.stringify({ email, password }),
+            headers: {'Content-Type': 'application/json'}
+        });
+        const data = await res.json();
+        console.log(data);
+        if (data.errors) {
+            emailError.textContent = data.errors.email;
+            passwordError.textContent = data.errors.password;
+        }
+        if (data.user) {
+            location.assign('/main');
+        }
+    
+        }
+        catch (err) {
+        console.log(err);
+        }
+    });
+    </script>
+<!--
+<script src="../public/js/VSI.js"></script>
+<script src="../js/VSI.js"></script>
+-->
+</body>
+</html>

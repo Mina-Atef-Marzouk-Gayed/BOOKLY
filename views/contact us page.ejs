@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+    <link rel="stylesheet" href="../CSS/contact us page.css" />
+    <link rel="stylesheet" href="../css/nav.css" />
+
+  </head>
+  <body>
+    <nav class="nav">
+        <div class="navlogo">
+            <p>Bookly</p>
+        </div>
+        <div class="nav-menu">
+            <ul>
+                <li><a href="#"class="link active">Home</a></li>
+                <li><a href="#"class="link">Shop</a></li>
+                <li><a href="#"class="link">About</a></li>
+                <li><a href="#"class="link">contact us</a></li>
+            </ul>
+        </div>
+        <div class="nav-button">
+            <button class="btn" id="loginBtn" ><a href="signIn.html">Sign In</a></button>
+            <button class="btn" id="signUpBtn">  <a href="signUp.html">Sign Up</a></button>
+    </nav>
+
+
+    <div class="container">
+      <form id="form" onsubmit="validate()" class="form-box">
+        <h1>Contact Us Form</h1>
+        <div class="inputField">
+          <input type="text" id="FN" placeholder="First Name"  />
+          <br>
+          <small>Error message</small>
+          
+        </div>
+        <div class="inputField">
+          <input type="text" id="LN" placeholder="Last Name" />
+          <br>
+          <small>Error message</small>
+        </div>
+        <div class="inputField">
+          <input type="email" id="email" placeholder="Email"  />
+          <br>
+          <small>Error message</small>
+        </div>
+        <div class="inputField">
+          <input type="text" id="mobile" placeholder="Mobile"  />
+          <br>
+         <small>Error message</small> 
+        </div>
+        <h4>Type Your Message Here...</h4>
+        <textarea id="message" ></textarea>
+        <input type="submit" class="send" value="send">
+      </form>
+    </div>
+  </body>
+  <script src="../js/Contact page.js"></script>
+
+</html>

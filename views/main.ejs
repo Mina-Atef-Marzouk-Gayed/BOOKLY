@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="author" content="Maryam Soubky">
+     <meta name="description" content="This is a web page for an online bookstore.">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Bookly</title>
+     <link rel="icon" href="../Icon.jpeg" type="image/x-icon">
+
+     <link rel="stylesheet" href="../public/css/main.css"><!--not working-->
+     <link rel="stylesheet" href="../css/main.css"><!--working one-->
+     <link rel="stylesheet" href="../css/nav2.css">
+
+     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+     <%-include('../views/partials/navMain.ejs'); -%>
+
+     <section class="home">
+          <div class="container">
+               <div class="bestseller">
+                    <h1 class="title">Best Sellers</h1>
+                    <hr>
+                    <p class="p-bestseller">Check out the new best sellers of the week!</p>
+                    <button class="shop-button"><a href="shopPage.html">Shop Now</a></button>
+               </div>
+               <button class="scroll-button-left scroll-button">&lt;</button>
+               <button class="scroll-button-right scroll-button">&gt;</button>
+               <div class="booksBestSeller">
+                    <div class="card"><a href="#" class="book"><img src="../booksImages/FunnyStory.jpg"
+                                   class="bookimg"></a>
+                    </div>
+                    <div class="card"><a href="#" class="book"><img src="../booksImages/TheWomen.jpg" class="bookimg"></a>
+                    </div>
+                    <div class="card"><a href="#" class="book"><img src="../booksImages/ACourtOfThornsAndRoses.jpg"
+                                   class="bookimg"></a></div>
+                    <div class="card"><a href="#" class="book"><img src="../booksImages/ACalamityOfSouls.jpg"
+                                   class="bookimg"></a></div>
+                    <div class="card"><a href="#" class="book"><img src="../booksImages/TheConvenantOfWater.jpg"
+                                   class="bookimg"></a></div>
+               </div>
+               <img src="../booksImages//shelf.png" class="shelf">
+          </div>
+     </section>
+     <section class="shop">
+          <div class="container2">
+               <h2 class="title">Shop for Books!</h2>
+               <div class="bookSlider">
+                    <div class="bookBox">
+                         <div class="book">
+                              <img src="../booksImages//Wonder.jpg" class="bookimg">
+                         </div>
+                         <div class="bookInfo">
+                              <h3>Wonder</h3>
+                              <div class="price">$15.99 <span>$20.99</span></div>
+                              <a href="#" class="btn">add to cart</a>
+                         </div>
+                    </div>
+                    <div class="bookBox">
+                         <div class="icons">
+                              <a href="#" class="fas fa-search"></a>
+                              <a href="#" class="fas fa-heart"></a>
+                              <a href="#" class="fas fa-eye"></a>
+                         </div>
+                         <div class="book">
+                              <img src="../booksImages/Wonder.jpg" class="bookimg">
+                         </div>
+                         <div class="bookInfo">
+                              <h3>Wonder</h3>
+                              <div class="price">$15.99 <span>$20.99</span></div>
+                              <a href="#" class="btn">add to cart</a>
+                         </div>
+                    </div>
+                    <div class="bookBox">
+                         <div class="icons">
+                              <a href="#" class="fas fa-search"></a>
+                              <a href="#" class="fas fa-heart"></a>
+                              <a href="#" class="fas fa-eye"></a>
+                         </div>
+                         <div class="book">
+                              <img src="../booksImages/Wonder.jpg" class="bookimg">
+                         </div>
+                         <div class="bookInfo">
+                              <h3>Wonder</h3>
+                              <div class="price">$15.99 <span>$20.99</span></div>
+                              <a href="#" class="btn">add to cart</a>
+                         </div>
+                    </div>
+                    <div class="bookBox">
+                         <div class="icons">
+                              <a href="#" class="fas fa-search"></a>
+                              <a href="#" class="fas fa-heart"></a>
+                              <a href="#" class="fas fa-eye"></a>
+                         </div>
+                         <div class="book">
+                              <img src="../booksImages/Wonder.jpg" class="bookimg">
+                         </div>
+                         <div class="bookInfo">
+                              <h3>Wonder</h3>
+                              <div class="price">$15.99 <span>$20.99</span></div>
+                              <a href="#" class="btn">add to cart</a>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </section>
+     <%-include('../views/partials/footer.ejs'); -%>
+
+</body>
+
+</html>

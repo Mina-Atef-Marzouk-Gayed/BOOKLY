@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="author" content="Maryam Soubky">
+     <meta name="description" content="This is a web page for an online bookstore.">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Bookly</title>
+     <link rel="icon" href="../Pictures/booksIcon.png" type="image/x-icon">
+     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+     <link rel="stylesheet" href="../CSS/admin.css">
+</head>
+
+<body>
+     <h2>Site administration</h2>
+     <h3>Authorization and Authentication</h3>
+     <table id="userTable">
+          <tr>
+               <th>Email Address</th>
+               <th>First Name</th>
+               <th>Last Name</th>
+               <th>Status</th>
+          </tr>
+          <tr>
+               <td>maryam2204664@miuegypt.edu</td>
+               <td>Maryam</td>
+               <td>Soubky</td>
+               <td>Active</td>
+          </tr>
+     </table>
+
+
+     <div id="admin-createUsr-form">
+          <input type="text" name="" id="admin-createUsr-firstname" placeholder="Firstname">
+          <input type="text" name="" id="admin-createUsr-lastname" placeholder="lastname">
+          <input type="email" id="admin-createUsr-email" placeholder="user email"><br>
+          <button id="add-user-btn">Add User</button>
+     </div>
+
+
+     <script src="../JS/admin.js"></script>
+</body>

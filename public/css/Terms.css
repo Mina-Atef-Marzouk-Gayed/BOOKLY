@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+--cornsilk: #fefae0ff;
+--earth-yellow: #dda15eff;
+--tigers-eye: #bc6c25ff;
+--pakistan-green: #283618ff;
+--dark-moss-green: #606c38ff;
+
+}
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: 'popins', sans-serif;
+}
+
+body{
+  background: var(--cornsilk);
+  font-size: 12px;
+  line-height: 20px;
+  color: var(--tigers-eye);
+  padding: 0 20px;
+  background-image: url("../otherImagesUsed/aboutUsImage.jpeg");
+}
+
+.flex_center{
+    margin-top: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tc_main{
+  margin: 20px 0;
+  width: 800px;
+  max-width: 100%;
+  height: 550px;
+  background: var(--cornsilk);
+  text-align: center;
+  border-radius: 3px;
+}
+
+.tc_main .title{
+  color: var(--dark-moss-green);
+  margin-bottom: 5px;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.info span{
+
+  color: var(--dark-moss-green);
+  font-size: 15px;
+  font-weight: bolder;
+
+}
+.tc_main .tc_content .tc_bottom .title{
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.tc_main .tc_content{
+  width: 100%;
+  margin: 35px 0;
+  height: calc(550px - 150px);
+}
+
+.tc_main .tc_btns{
+  width: 100%;
+  height: 80px;
+  padding: 21px 0;
+  box-shadow: 0 -1px 5px rgba(0,0,0,0.1);
+}
+
+.tc_main .tc_content .tc_top{
+  margin: 0 35px 35px;
+}
+
+.tc_main .tc_content .tc_bottom{
+  padding: 0 35px;
+  overflow: auto;
+  height:270px}
+
+.tc_main .tc_content .tc_top .icon{
+  font-size: 42px;
+  text-align: center;
+  margin-bottom: 10px;
+  color: var(--dark-moss-green);
+}
+
+.tc_main .tc_content .tc_top .info{
+  color: var(--tigers-eye);
+  
+
+}
+
+.tc_main .tc_content .tc_bottom .info p{
+  font-style: italic;
+  margin-bottom: 10px;
+  color: var(--tigers-eye);
+  font-size: 14px;
+
+}
+
+.tc_main .tc_btns button{
+  width: 125px;
+  padding: 10px;
+  margin: 0 10px;
+  border: 0;
+  cursor: pointer;
+  border-radius: 3px;
+  color: var(--cornsilk);
+  transition: all 0.5s ease;
+}
+
+.tc_main .tc_btns button.accept{
+  background: var(--dark-moss-green);
+  color: var(--cornsilk);
+}
+
+.tc_main .tc_btns button.decline{
+  border: 1px solid var(--dark-moss-green);
+  background: transparent;
+  color: var(--title-clr);
+}
+
+.tc_main .tc_btns button.decline:hover{
+  background: var(--dark-moss-green);
+  color: var(--cornsilk);
+}
+
+.tc_main .tc_btns button.accept:hover{
+  background: var(--pakistan-green);
+}

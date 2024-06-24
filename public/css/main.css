@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+section{
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1 1/2;
+    grid-row: 1/2;
+    gap: 1rem;
+}
+.title{
+    text-align: left;
+    margin-top: 8.3rem;
+    margin-bottom: 0.4rem;
+    font-size: 4rem;
+    padding:.5rem 1rem;
+    color:#606c38ff;
+}
+
+.home .booksBestSeller{
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    position: relative;
+    margin-top: 7rem;
+}
+
+.booksBestSeller::-webkit-scrollbar {
+    display: none;
+}
+
+hr{
+    height: 0.8rem;
+    background-color: #283618ff;
+    width: 28rem;
+}
+
+.p-bestseller{
+    text-align: left;
+    font-size: 2rem;
+    padding: 1rem;
+    color: #bc6c25ff;
+}
+
+a{
+    text-decoration: none;
+}
+
+.shop-button{
+    background-color: #606c38ff;
+    font-size: 1.5rem;
+    margin-left: 1rem;
+    height: 3rem;
+    width: 10rem;
+    border-radius: 40px;
+    border: none;
+    color: #fefae0;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.shop-button:hover{
+    background-color: #283618ff;
+    scale: 1.05;
+}
+
+.bookimg{
+    height: 13rem;
+    margin: 1rem;
+    object-position: center;
+    object-fit: contain;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.bookimg:hover{
+    scale: 1.1;
+}
+
+.shelf{
+    width:100%;
+    margin-top: -4rem;
+    grid-area: right;
+    position: relative;
+}
+
+.scroll-button-left{
+    position: absolute;
+    left: 48%;
+    top: 46.5%;
+    transform: translateY(-50%);
+    z-index: 3;
+    height: 13rem;
+    width: 1.5rem;
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    color:#606c38;
+}
+
+.scroll-button-right{
+    position: absolute;
+    right: 0;
+    top: 46.5%;
+    transform: translateY(-50%);
+    z-index: 3;
+    height: 13rem;
+    width: 1.5rem;
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    color:#606c38;
+}
+
+.scroll-button:hover{
+    background: rgba(221, 161, 94, .6);
+    color: rgba(40, 54, 24, 1.0);
+}
+
+.bookSlider{
+    padding: 5px;
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    position: relative;
+    margin-top: 7rem;
+    border-style: solid;
+}
+
+html::-webkit-scrollbar{
+    display:none;
+}
+

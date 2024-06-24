@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; /* Changed font to Poppins */
+}
+
+.container {
+    margin-top: 50px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f0f0f0;
+}
+
+.container form {
+    width: 670px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    border-radius: 15px;
+    background: #f0f0f0;
+    backdrop-filter: blur(30px);
+    flex-wrap: wrap;
+}
+
+.container form h1 {
+    color: #bc6c25;
+    font-weight: 800;
+    line-height: 2;
+    margin-top: 20px;
+    width: 500px;
+    text-align: center;
+}
+
+.container form input {
+    width: 300px;
+    height: 50px;
+    padding-left: 10px;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    margin-bottom: 10px;
+    background: none;
+    border-bottom: 2px solid #606c38ff; 
+    color: #606c38ff; 
+}
+
+.container form input::placeholder {
+    color: #283618; 
+}
+
+.container form #LN,
+.container form #mobile {
+    margin-left: 25px;
+}
+
+.container form h4 {
+    color: #606c38;
+    font-weight: 300;
+    width: 600px;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.container form textarea {
+    background: none;
+    border: 2px solid #606c38ff; 
+    color: #606c38ff; 
+    font-weight: 200;
+    font-size: 20px;
+    padding: 10px;
+    outline: none;
+    min-height: 90px;
+    max-height: 90px;
+    min-width: 620px;
+    max-width: 620px;
+}
+
+.container form #button {
+    border: none;
+    background: #283618; 
+    border-radius: 5px;
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 24px;
+    color: #bc6c25ff; 
+    width: 200px;
+    height: 60px;
+    padding: 0;
+    margin-bottom: 30px;
+    transition: 0.5s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container form #button:hover {
+    background: #dda15eff; 
+    color: #dda15eff; 
+    transition: 0.5s ease-in-out;
+}
+.inputField.error input {
+    border-color: var(--error-color);
+}
+.inputField small {
+    color: var(--error-color);
+    position: absolute;
+    visibility: hidden;
+}
+
+.inputField.error small {
+    visibility: hidden;
+}

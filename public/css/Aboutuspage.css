@@ -1,0 +1,142 @@
+*{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    background-color: #fefae0ff;
+  }
+  body{
+      background-color: rgb(255, 255, 255);
+  }    
+  .heading{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+    text-align: center;
+    margin: 20px auto;
+  }
+  .heading h1{
+      font-size: 50px;
+      color: #606c38ff;
+      margin-bottom: 25px;
+      position: relative;
+  }
+  .heading h1::after{
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      display: block;
+      margin:0 auto;
+      background-color: #283618;
+  }
+  .heading p{
+      font-size: 19px;
+      color: #283618ff;
+      margin-bottom: 35px;
+  }
+  .container{
+      width: 90%;
+      margin: 0 auto;
+      padding: 10px 20px;
+  }
+  .about{
+      display: flex;
+      justify-content:space-between;
+      align-items: center;
+      flex-wrap: wrap;
+  }
+  .about-image{
+      flex:1;
+      margin-block: 40px;
+      overflow: hidden;
+  
+  }
+  .about-image img{
+      max-width: 100%;
+      height: auto;
+      display: block;
+      transition: 0.5 ease;
+  }
+  .about-image:hover img{
+  transform: scale(1.1);
+  }
+  .content{
+      flex:1;
+  }       
+  .content h2{
+      font-size: 23px;
+      margin-bottom: 15px;
+      color: #dda15eff;
+  }
+  .content p{
+      font-size: 18px;
+      line-height: 1.5;
+      
+  }
+  
+  .content .read-more :hover{
+      background-color: #ffffff;
+  }
+  .card{
+      background-color: #fefae0ff;
+      width: 400;
+      padding: 22px 30px;
+      line-height: 1.8;
+  }
+  #cd{
+      display: none;
+  }
+  
+  .phar{
+      display: none;
+  }
+  
+  label{
+      display: inline-block;
+      cursor: pointer;
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #283618;
+      color: #fcfcfc;
+      text-decoration: none;
+      border-radius: 20px;
+      margin-top: 13px;
+      transition: 0.3 ease;
+      font-size: 19px;
+  }
+  
+  @media screen and (max-width:767px) {
+      .heading{
+          padding: 0 20px;
+      }
+      .heading h1{
+          font-size: 36px;
+      }
+      .heading p {
+          font-size: 17px;
+          margin-bottom: 0px;
+      }
+      .content{
+          padding: 0px;
+      }
+      .about{
+          padding: 20px;
+          flex-direction: column;
+      }
+      .about-image{
+          margin-right: 0px;
+          margin-bottom: 20px;
+      }
+      .content p{
+          padding: 0px;
+          font-size: 16px;
+      }
+      .content .read-more{
+          font-size: 16px;
+      }
+  }
